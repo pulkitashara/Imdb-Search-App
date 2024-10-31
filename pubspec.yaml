@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   provider: ^6.1.2 # State management package
   http: ^1.2.2 # HTTP package for API calls
+  flutter_dotenv: ^5.2.1
 
   cupertino_icons: ^1.0.8
 
@@ -37,3 +38,6 @@ flutter:
           style: italic
 
   uses-material-design: true
+
+  assets:
+    - .env

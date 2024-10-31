@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 import 'movie.dart';
@@ -30,7 +31,7 @@ class MovieProvider with ChangeNotifier {
     _errorMessage = null; // Reset error message
     notifyListeners(); // Notify listeners of state change
 
-    const String apiKey = '98a8df8a'; // API key for the movie database
+    final apiKey = dotenv.env['API_KEY']; // API key for the movie database
 
     // List of random movie titles for selection
     final randomTitles = ['Inception', 'Interstellar', 'The Dark Knight', 'Avatar', 'Titanic'];
