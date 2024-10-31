@@ -79,29 +79,42 @@ class MovieSearchScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 16),
-            // Conditional loading indicator or movie list
-            movieProvider.isLoading
-                ? const Center(
-              child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF1C7EEB)), // Loading indicator color
+            // Conditional loading indicator, movie list, or error message
+            if (movieProvider.isLoading)
+              const Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF1C7EEB)), // Loading indicator color
+                ),
+              )
+            else if (movieProvider.errorMessage != null)
+              Center(
+                child: Text(
+                  movieProvider.errorMessage!,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.red, // Error message color
+                    fontFamily: 'Montserrat',
+                  ),
+                ),
+              )
+            else
+              Expanded(
+                child: ListView.builder(
+                  itemCount: movieProvider.movies.length,
+                  itemBuilder: (context, index) {
+                    // Create a card for each movie in the list
+                    final movie = movieProvider.movies[index];
+                    return MovieCard(movie: movie);
+                  },
+                ),
               ),
-            )
-                : Expanded(
-              child: ListView.builder(
-                itemCount: movieProvider.movies.length,
-                itemBuilder: (context, index) {
-                  // Create a card for each movie in the list
-                  final movie = movieProvider.movies[index];
-                  return MovieCard(movie: movie);
-                },
-              ),
-            ),
           ],
         ),
       ),
     );
   }
 }
+
 
 class MovieCard extends StatelessWidget {
   final Movie movie;

@@ -8,12 +8,16 @@ import 'movie.dart';
 class MovieProvider with ChangeNotifier {
   List<Movie> _movies = []; // Private list to hold fetched movies
   bool _isLoading = false; // Loading state indicator
+  String? _errorMessage; // Error message for search failures
 
   // Public getter to expose the list of movies
   List<Movie> get movies => _movies;
 
   // Public getter to expose the loading state
   bool get isLoading => _isLoading;
+
+  // Public getter to expose the error message
+  String? get errorMessage => _errorMessage;
 
   // Constructor to fetch random movies on initialization
   MovieProvider() {
@@ -23,6 +27,7 @@ class MovieProvider with ChangeNotifier {
   // Method to fetch random movies from the API
   Future<void> fetchRandomMovies() async {
     _isLoading = true; // Set loading state
+    _errorMessage = null; // Reset error message
     notifyListeners(); // Notify listeners of state change
 
     const String apiKey = '98a8df8a'; // API key for the movie database
@@ -50,7 +55,10 @@ class MovieProvider with ChangeNotifier {
         }));
       } else {
         _movies = []; // Clear movies if the response indicates no results
+        _errorMessage = 'No movies found for the given query.'; // Set error message
       }
+    } else {
+      _errorMessage = 'Failed to fetch movies. Please try again.'; // Set error message for failed requests
     }
 
     _isLoading = false; // Reset loading state
@@ -62,6 +70,7 @@ class MovieProvider with ChangeNotifier {
     if (query.isEmpty) return; // Exit if query is empty
 
     _isLoading = true; // Set loading state
+    _errorMessage = null; // Reset error message
     notifyListeners(); // Notify listeners of state change
 
     const String apiKey = '98a8df8a'; // API key for the movie database
@@ -83,7 +92,10 @@ class MovieProvider with ChangeNotifier {
         }));
       } else {
         _movies = []; // Clear movies if the response indicates no results
+        _errorMessage = 'No movies found for the given query.'; // Set error message
       }
+    } else {
+      _errorMessage = 'Failed to fetch movies. Please try again.'; // Set error message for failed requests
     }
 
     _isLoading = false; // Reset loading state
