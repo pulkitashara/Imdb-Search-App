@@ -1,16 +1,19 @@
-# imdb_search_app
+# Movie Search App
 
-IMDB search app
+## Description
 
-## Getting Started
+The Movie Search App is a Flutter application that allows users to search for movies using the OMDb API. Users can enter a movie title in the search field, and the app will fetch and display relevant movie information, including the title, genre, IMDb rating, and poster.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Search Functionality**: Users can search for movies by entering a title in the search bar.
+- **Loading Indicator**: The app shows a loading spinner while fetching data.
+- **Movie Cards**: Display movie details in a visually appealing card format.
+- **IMDb Ratings**: Color-coded IMDb ratings based on the rating value.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Technologies Used
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter**: A UI toolkit for building natively compiled applications for mobile from a single codebase.
+- **Provider**: A state management library for Flutter applications.
+- **HTTP Package**: Used for making HTTP requests to the OMDb API.
+- **OMDb API**: A RESTful API for movie data.
