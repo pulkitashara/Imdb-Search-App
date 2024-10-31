@@ -8,9 +8,9 @@ The Movie Search App is a Flutter application that allows users to search for mo
 
 - **Search Functionality**: Users can search for movies by entering a title in the search bar.
 - **Loading Indicator**: The app shows a loading spinner while fetching data.
-<<<<<<< HEAD
+  <<<<<<< HEAD
 - **Movie Cards**: Display movie details in a visually appealing card format.
-=======
+  =======
 - **Movie Cards**: Displays movie details in a visually appealing card format.
 >>>>>>> c3a44c6d9dc636f00635832346f84326fbf75a23
 - **IMDb Ratings**: Color-coded IMDb ratings based on the rating value.
@@ -21,8 +21,8 @@ The Movie Search App is a Flutter application that allows users to search for mo
 - **Provider**: A state management library for Flutter applications.
 - **HTTP Package**: Used for making HTTP requests to the OMDb API.
 - **OMDb API**: A RESTful API for movie data.
-<<<<<<< HEAD
-=======
+  <<<<<<< HEAD
+  =======
 
 ### Setup API Key
 
@@ -32,4 +32,3 @@ This app uses the OMDb API for movie data, and an API key is required for access
 2. Add your OMDb API key to the `.env` file in the following format:
    ```plaintext
    API_KEY=your_api_key_here
->>>>>>> c3a44c6d9dc636f00635832346f84326fbf75a23
