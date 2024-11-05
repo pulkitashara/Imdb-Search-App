@@ -4,6 +4,10 @@
 
 The Movie Search App is a Flutter application that allows users to search for movies using the OMDb API. Users can enter a movie title in the search field, and the app will fetch and display relevant movie information, including the title, genre, IMDb rating, and poster.
 
+## Video
+
+[Watch the video](assets/videos/screenrecord.mp4)
+
 ## Features
 
 - **Search Functionality**: Users can search for movies by entering a title in the search bar.
