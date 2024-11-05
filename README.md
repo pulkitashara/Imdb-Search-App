@@ -6,7 +6,7 @@ The Movie Search App is a Flutter application that allows users to search for mo
 
 ## Video
 
-[Watch the video](assets/videos/screenrecord.gif)
+[Google drive link](https://drive.google.com/file/d/1FMn79iw3UR3M5c2CEE28HjeVw_gMllUG/view?usp=drive_link)
 
 ## Features
 
